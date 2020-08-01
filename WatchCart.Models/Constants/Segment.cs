@@ -8,8 +8,8 @@ namespace WatchCart.Models.Constants
 {
     public enum Segment
     {
-        BASIC,
-        PREMIUM,
-        PLATINUM
+        BASIC=1,
+        PREMIUM=2,
+        PLATINUM=3
     }
 }

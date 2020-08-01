@@ -8,7 +8,7 @@ namespace WatchCart.Models.Constants
 {
     public enum StrapType
     {
-        METALIC,
-        LEATHER
+        METALIC=1,
+        LEATHER=2
     }
 }
