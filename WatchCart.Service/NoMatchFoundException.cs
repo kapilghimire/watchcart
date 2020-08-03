@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace WatchCart.Service
 {
-    public class NoMatchFoundException
+    public class NoMatchFoundException : Exception
     {
+        public NoMatchFoundException()
+        {
+        }
+
+        public NoMatchFoundException(string message) : base(message)
+        {
+        }
     }
 }

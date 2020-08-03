@@ -10,8 +10,8 @@ namespace WatchCart.Models.Constants
     public enum WatchTypes
     {
         [Description("AnalogWatch")]
-        AnalogWatch,
+        AnalogWatch=1,
         [Description("DigitalWatch")]
-        DigitalWatch
+        DigitalWatch=2
     }
 }

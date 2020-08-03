@@ -8,5 +8,9 @@ namespace WatchCart.Service
 {
     public class InputValidatorService
     {
+        public static int Validate(string input, int limit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

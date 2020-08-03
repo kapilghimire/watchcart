@@ -8,8 +8,8 @@ namespace WatchCart.Models.Constants
 {
     public enum BrandName
     {
-        FASTTRACK,
-        TITAN,
-        TIMEX
+        FASTTRACK =1,
+        TITAN = 2,
+        TIMEX =3
     }
 }

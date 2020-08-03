@@ -8,8 +8,8 @@ namespace WatchCart.Models.Constants
 {
    public enum StrapColor
     {
-        BLACK,
-        BROWN,
-        GOLD
+        BLACK=1,
+        BROWN=2,
+        GOLD=3
     }
 }
