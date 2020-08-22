@@ -9,7 +9,7 @@ using WatchCart.Repository;
 
 namespace WatchCart.Service
 {
-    public class WatchService
+    public class WatchService : IWatchService
     {
 
         public WatchService(IWatchRepository watchRepository)

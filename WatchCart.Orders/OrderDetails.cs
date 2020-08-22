@@ -8,5 +8,10 @@ namespace WatchCart.Orders
 {
     public class OrderDetails
     {
+        public int OrderId { get; set; }
+
+        public string OrderDetail { get; set; }
+
+        public DateTime CreateDate { get; set; }
     }
 }
