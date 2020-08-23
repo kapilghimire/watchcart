@@ -28,33 +28,38 @@ namespace WatchCart.ConsoleApp
             Console.WriteLine("WELCOME TO MY SHOP WATCH KISKO!!!!!!!");
             Console.WriteLine("*********************************************");
 
-           
-            while (true)
-            {
-                Console.WriteLine("Press 1: to Place order,Press 2: to Exit,Press 3: to Restart");
-                var opiton = Convert.ToInt32(Console.ReadLine());
+            try {
+                while (true)
+                {
+                    Console.WriteLine("Press 1: to Place order,Press 2: to Exit,Press 3: to Restart");
+                    var opiton = Convert.ToInt32(Console.ReadLine());
 
-                //Place order
-                if (opiton == 1)
-                {
-                    StartApp();
-                    
-                }
-                // exit application 
-                if (opiton == 2)
-                {
-                    System.Environment.Exit(0);
-                }
-                // clear screen
-                if (opiton == 3)
-                {
-                    Console.Clear();
+                    //Place order
+                    if (opiton == 1)
+                    {
+                        StartApp();
+
+                    }
+                    // exit application 
+                    if (opiton == 2)
+                    {
+                        System.Environment.Exit(0);
+                    }
+                    // clear screen
+                    if (opiton == 3)
+                    {
+                        Console.Clear();
+                    }
+
                 }
 
             }
-
-
-        }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                StartApp();
+            }
+        }//end of Main Method
 
 
         private static void PrintWatchTypeMenu()
@@ -119,7 +124,6 @@ namespace WatchCart.ConsoleApp
         private static void StartApp()
         {
             Console.WriteLine("Wacth Type Options: ");
-
             PrintWatchTypeMenu();
             Console.WriteLine("BrandName Options: ");
             BrandTypeMenu();

@@ -29,7 +29,7 @@ namespace WatchCart.ConsoleApp
             //after getting all inputs, retreive the watch based upon the choice
 
             Console.WriteLine("****************************************************");
-            Console.WriteLine("Please Provide desired value from above Information");
+            Console.WriteLine("Please Provide the desired value from above Information to find the matched combination from the below combination ");
             Console.WriteLine("*****************************************************");
             Console.WriteLine("Watch Type: ");
             int watchType = Convert.ToInt32(Console.ReadLine());
@@ -48,7 +48,7 @@ namespace WatchCart.ConsoleApp
 
 
             Watch foundWatch =   PrintMatchedWatch(watchType, brandName, straptype, strapcolor, segment);
-            
+           
 
             return foundWatch;
         }

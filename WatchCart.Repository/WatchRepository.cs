@@ -27,6 +27,9 @@ namespace WatchCart.Repository
                 }
             }
 
+            Console.WriteLine("*********************************************");
+            Console.WriteLine("Your matched combination to process order is:");
+
             return matchedWatches;
         }
     }

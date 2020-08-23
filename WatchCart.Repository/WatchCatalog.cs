@@ -19,7 +19,8 @@ namespace WatchCart.Repository
                  new AnalogWatch(){WatchId=1101, BrandName="FASTTRACK",StrapType="METALIC",StrapColor="BLACK",Segment="BASIC",Price=4000, NumberOfHands=2,HasCalender=false},
                  new AnalogWatch(){WatchId=1102, BrandName="FASTTRACK",StrapType="METALIC",StrapColor="BLACK",Segment="BASIC",Price=4000},
                  new AnalogWatch(){WatchId=1103, BrandName="FASTTRACK",StrapType="METALIC",StrapColor="BLACK",Segment="BASIC",Price=4000},
-                 new AnalogWatch(){WatchId=1104, BrandName="FASTTRACK",StrapType="METALIC",StrapColor="BLACK",Segment="BASIC",Price=4000}
+                 new AnalogWatch(){WatchId=1104, BrandName="FASTTRACK",StrapType="METALIC",StrapColor="BLACK",Segment="BASIC",Price=4000},
+                 new DigitalWatch(){WatchId=1105, BrandName="FASTTRACK",StrapType="METALIC",StrapColor="BLACK",Segment="BASIC",Price=4000},
             };
         }
 
