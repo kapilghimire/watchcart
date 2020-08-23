@@ -30,7 +30,7 @@ namespace WatchCart.Test
             WatchCatalog watchCatalog = new WatchCatalog();
             Assert.NotNull(watchCatalog.Catalog);
             Assert.IsAssignableFrom<List<Watch>>(watchCatalog.Catalog);
-           Assert.True(watchCatalog.Catalog.Count == 0);
+            Assert.True(watchCatalog.Catalog.Count == 0);
         }
         [Test]
         public void ShouldReturnAWatch()
