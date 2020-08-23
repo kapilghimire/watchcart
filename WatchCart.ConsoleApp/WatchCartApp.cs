@@ -28,9 +28,15 @@ namespace WatchCart.ConsoleApp
             //implement the code to display the menu options
             //after getting all inputs, retreive the watch based upon the choice
 
-            Console.WriteLine("Please Provide desired value");
+            Console.WriteLine("****************************************************");
+            Console.WriteLine("Please Provide desired value from above Information");
+            Console.WriteLine("*****************************************************");
             Console.WriteLine("Watch Type: ");
             int watchType = Convert.ToInt32(Console.ReadLine());
+            if(watchType != 1 && watchType != 2)
+            {
+                throw new InvalidInputException(watchType.ToString());
+            }
             Console.WriteLine("BrandName Type: ");
             int brandName = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("StrapType Type: ");
@@ -55,7 +61,15 @@ namespace WatchCart.ConsoleApp
         private static OrderDetails MapToOrderDetails(Watch watch)
         {
             var orderDeatils = new OrderDetails();
-            orderDeatils.OrderDetail = watch.ToString();
+            if (watch.Type.ToString()== "AnalogWatch")
+            {
+                orderDeatils.OrderDetail = ((AnalogWatch)watch).ToString();
+            }
+            else
+            {
+                orderDeatils.OrderDetail = ((DigitalWatch)watch).ToString();
+            }
+            orderDeatils.CreateDate = DateTime.UtcNow;
             return orderDeatils;
         }
 
@@ -68,6 +82,8 @@ namespace WatchCart.ConsoleApp
         {
            
           this._repository.save(MapToOrderDetails(watch));
+            Console.WriteLine("Order Saved Successfully");
+            Console.WriteLine("*----------------------------------------------------------------*");
            
         }
 

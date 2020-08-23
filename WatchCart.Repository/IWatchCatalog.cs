@@ -10,5 +10,6 @@ namespace WatchCart.Repository
     public interface IWatchCatalog
     {
         List<Watch> Catalog { get; set; }
+       
     }
 }

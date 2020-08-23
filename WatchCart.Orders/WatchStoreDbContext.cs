@@ -15,6 +15,6 @@ namespace WatchCart.Orders
 
         }
         public DbSet<OrderDetails> OrderDetail { get; set; }
-        public DbSet<Watch> WatchDetail { get; set; }
+        public DbSet<Watch> WatchDetail { get; set; }//require if we want to store watch details dynamically in future
     }
 }

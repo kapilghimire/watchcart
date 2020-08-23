@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace WatchCart.Service
 {
-    public class InvalidInputException
+    public class InvalidInputException: Exception
     {
+        public InvalidInputException()
+        {
+
+        }
+
+        public InvalidInputException(string name) : base(String.Format("Invalid input: {0}", name))
+        {
+            Console.WriteLine("Invalid input: {0}", name);
+        }
     }
 }

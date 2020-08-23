@@ -27,13 +27,14 @@ namespace WatchCart.Service
                 return this.WatchRepository.GetWatches(
 
                      Enum.ToObject(typeof(WatchTypes), watchType).ToString(),
-                      Enum.ToObject(typeof(BrandName), brandName).ToString(),
-                      Enum.ToObject(typeof(StrapType), straptype).ToString(),
-                       Enum.ToObject(typeof(StrapColor), strapcolor).ToString(),
-                        Enum.ToObject(typeof(Segment), segment).ToString()
+                     Enum.ToObject(typeof(BrandName), brandName).ToString(),
+                     Enum.ToObject(typeof(StrapType), straptype).ToString(),
+                     Enum.ToObject(typeof(StrapColor), strapcolor).ToString(),
+                     Enum.ToObject(typeof(Segment), segment).ToString()
 
                                                  ).First();
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 throw new NoMatchFoundException("No Match Found, Please Try Another Combination");
             }

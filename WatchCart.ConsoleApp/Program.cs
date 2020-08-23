@@ -25,26 +25,30 @@ namespace WatchCart.ConsoleApp
             // 1. Yes -> Save the orderdetails into database using OrderRepository
             // 2. No -> Should exit the application
             
-            Console.WriteLine("Watch Kisko");
-           
+            Console.WriteLine("WELCOME TO MY SHOP WATCH KISKO!!!!!!!");
+            Console.WriteLine("*********************************************");
 
-           Console.WriteLine("Place order : 1 or exit 2 or restar 3");
+           
             while (true)
             {
+                Console.WriteLine("Press 1: to Place order,Press 2: to Exit,Press 3: to Restart");
                 var opiton = Convert.ToInt32(Console.ReadLine());
 
+                //Place order
                 if (opiton == 1)
                 {
                     StartApp();
                     
                 }
+                // exit application 
                 if (opiton == 2)
                 {
-                    // exit application 
+                    System.Environment.Exit(0);
                 }
+                // clear screen
                 if (opiton == 3)
                 {
-                    // clear screen
+                    Console.Clear();
                 }
 
             }
@@ -69,21 +73,46 @@ namespace WatchCart.ConsoleApp
 
         private static void BrandTypeMenu()
         {
+            var option = 1;
+
+            foreach (var item in Enum.GetNames(typeof(BrandName)))
+            {
+
+                Console.WriteLine("{0}:{1}", item, option++);
+            }
 
         }
 
         private static void StripeTypeMenu()
         {
+            var option = 1;
 
+            foreach (var item in Enum.GetNames(typeof(StrapType)))
+            {
+
+                Console.WriteLine("{0}:{1}", item, option++);
+            }
         }
         private static void StripColorMenu()
         {
+            var option = 1;
 
+            foreach (var item in Enum.GetNames(typeof(StrapColor)))
+            {
+
+                Console.WriteLine("{0}:{1}", item, option++);
+            }
         }
 
         private static void SegmentColorMenu()
         {
+            var option = 1;
 
+            foreach (var item in Enum.GetNames(typeof(Segment)))
+            {
+
+                Console.WriteLine("{0}:{1}", item, option++);
+            }
         }
 
 
@@ -104,7 +133,8 @@ namespace WatchCart.ConsoleApp
             var WatchCartApp = new WatchCartApp( new WatchService(new WatchRepository( new WatchCatalog())), new OrderRepository( new WatchStoreDbContext()));
             var Watch = WatchCartApp.GetWatchByUserChoice();
 
-            Console.WriteLine("Place order or not ");
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("Press 1 to Process order else press any key to Exit");
 
             int userChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -114,8 +144,7 @@ namespace WatchCart.ConsoleApp
             }
             else
             {
-                /// clean the console 
-                ///  StartApp();
+                System.Environment.Exit(0);
             }
         }
     }

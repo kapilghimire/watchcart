@@ -9,6 +9,10 @@ namespace WatchCart.Models
 {
     public class Watch
     {
+        public Watch()
+        {
+        }
+
         public Watch(WatchTypes type)
         {
             this.Type = type;
