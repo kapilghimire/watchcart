@@ -33,18 +33,29 @@ namespace WatchCart.ConsoleApp
             Console.WriteLine("*****************************************************");
             Console.WriteLine("Watch Type: ");
             int watchType = Convert.ToInt32(Console.ReadLine());
-            if(watchType != 1 && watchType != 2)
-            {
-                throw new InvalidInputException(watchType.ToString());
-            }
+            if (InputValidatorService.Validate(watchType.ToString(), 2) == 1)
+                throw new InvalidInputException("Watch Type");
+
             Console.WriteLine("BrandName Type: ");
             int brandName = Convert.ToInt32(Console.ReadLine());
+            if (InputValidatorService.Validate(brandName.ToString(), 3) == 1)
+                throw new InvalidInputException("BrandName Type");
+            
             Console.WriteLine("StrapType Type: ");
+            
             int straptype = Convert.ToInt32(Console.ReadLine());
+            if (InputValidatorService.Validate(straptype.ToString(), 3) == 1)
+                throw new InvalidInputException("StrapType Type");
+
             Console.WriteLine("StrapColor Type: ");
             int strapcolor = Convert.ToInt32(Console.ReadLine());
+            if (InputValidatorService.Validate(strapcolor.ToString(), 3) == 1)
+                throw new InvalidInputException("StrapColor Type");
+
             Console.WriteLine("Segment Type: ");
             int segment = Convert.ToInt32(Console.ReadLine());
+            if (InputValidatorService.Validate(segment.ToString(), 3) == 1)
+                throw new InvalidInputException("Segment Type");
 
 
             Watch foundWatch =   PrintMatchedWatch(watchType, brandName, straptype, strapcolor, segment);

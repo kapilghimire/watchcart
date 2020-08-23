@@ -135,8 +135,10 @@ namespace WatchCart.ConsoleApp
             SegmentColorMenu();
 
             var WatchCartApp = new WatchCartApp( new WatchService(new WatchRepository( new WatchCatalog())), new OrderRepository( new WatchStoreDbContext()));
-            var Watch = WatchCartApp.GetWatchByUserChoice();
-
+            try
+            {
+                var Watch = WatchCartApp.GetWatchByUserChoice();
+            
             Console.WriteLine("********************************************************");
             Console.WriteLine("Press 1 to Process order else press any key to Exit");
 
@@ -150,6 +152,17 @@ namespace WatchCart.ConsoleApp
             {
                 System.Environment.Exit(0);
             }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+
+            }
+
         }
     }
 }

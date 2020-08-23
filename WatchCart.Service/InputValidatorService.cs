@@ -10,7 +10,11 @@ namespace WatchCart.Service
     {
         public static int Validate(string input, int limit)
         {
-            throw new NotImplementedException();
+            int inputToInt = Convert.ToInt32(input);
+            if (inputToInt > limit)
+                return 0;
+            else
+                return 1;
         }
     }
 }
