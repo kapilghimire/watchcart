@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using WatchCart.Models;
@@ -134,7 +135,16 @@ namespace WatchCart.ConsoleApp
             Console.WriteLine("Segment Options: ");
             SegmentColorMenu();
 
-            var WatchCartApp = new WatchCartApp( new WatchService(new WatchRepository( new WatchCatalog())), new OrderRepository( new WatchStoreDbContext()));
+            var catalog = new WatchCatalog();
+            catalog.Catalog=new List<Watch>{
+                new AnalogWatch() { WatchId = 1101, BrandName = "FASTTRACK", StrapType = "METALIC", StrapColor = "BLACK", Segment = "BASIC", Price = 4000, NumberOfHands = 2, HasCalender = false },
+                 new AnalogWatch() { WatchId = 1102, BrandName = "FASTTRACK", StrapType = "METALIC", StrapColor = "BLACK", Segment = "BASIC", Price = 4000 },
+                 new AnalogWatch() { WatchId = 1103, BrandName = "FASTTRACK", StrapType = "METALIC", StrapColor = "BLACK", Segment = "BASIC", Price = 4000 },
+                 new AnalogWatch() { WatchId = 1104, BrandName = "FASTTRACK", StrapType = "METALIC", StrapColor = "BLACK", Segment = "BASIC", Price = 4000 },
+                 new DigitalWatch() { WatchId = 1105, BrandName = "FASTTRACK", StrapType = "METALIC", StrapColor = "BLACK", Segment = "BASIC", Price = 4000 },
+            };
+            //var WatchCartApp = new WatchCartApp( new WatchService(new WatchRepository( new WatchCatalog())), new OrderRepository( new WatchStoreDbContext()));
+            var WatchCartApp = new WatchCartApp(new WatchService(new WatchRepository(catalog)), new OrderRepository(new WatchStoreDbContext()));
             try
             {
                 var Watch = WatchCartApp.GetWatchByUserChoice();
