@@ -9,23 +9,23 @@ namespace WatchCart.Test
 {
     public class ServiceTest
     {
-        //[TestCase("1", 2, ExpectedResult = 1)]
-        //[TestCase("1", 3, ExpectedResult = 1)]
-        //[TestCase("2", 3, ExpectedResult = 2)]
-        //[TestCase("3", 3, ExpectedResult = 3)]
-        //public int ValidateShouldReturnInteger(string input, int limit)
-        //{
-        //    return InputValidatorService.Validate(input, limit);
-        //}
+        [TestCase("1", 2, ExpectedResult = 1)]
+        [TestCase("1", 3, ExpectedResult = 1)]
+        [TestCase("2", 3, ExpectedResult = 2)]
+        [TestCase("3", 3, ExpectedResult = 3)]
+        public int ValidateShouldReturnInteger(string input, int limit)
+        {
+            return InputValidatorService.Validate(input, limit);
+        }
 
-        //[TestCase("4", 3)]
-        //[TestCase("0", 3)]
-        //[TestCase("s", 3)]
-        //public void ValidateShouldThrowException(string input, int limit)
-        //{
-        //    var actual = Assert.Throws<InvalidInputException>(() => InputValidatorService.Validate(input, limit));
-        //    Assert.AreEqual($"Invalid User Input: {input}, Please Try Again", actual.Message);
-        //}
+        [TestCase("4", 3)]
+        [TestCase("0", 3)]
+        [TestCase("s", 3)]
+        public void ValidateShouldThrowException(string input, int limit)
+        {
+            var actual = Assert.Throws<InvalidInputException>(() => InputValidatorService.Validate(input, limit));
+            Assert.AreEqual($"Invalid User Input: {input}, Please Try Again", actual.Message);
+        }
 
         [Test]
         public void GetWatchesShouldReturnAnalogWatch()

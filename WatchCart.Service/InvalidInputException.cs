@@ -13,7 +13,7 @@ namespace WatchCart.Service
 
         }
 
-        public InvalidInputException(string name) : base(String.Format("Invalid input: {0}", name))
+        public InvalidInputException(string message) : base( message)
         {
         
         }
